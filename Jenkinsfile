@@ -30,8 +30,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh '''echo "Deploying using docker compose"
+                sh '''echo "Removing previous services"
                 docker compose down || true
+                echo "Removing previoous image if exists."
+                docker image rm -f rabnmgr7/employee-care:latest rabnmgr7/employee-care-db:latest
+                echo "Creating new services!!!"
                 docker compose up -d'''
             }
         }
