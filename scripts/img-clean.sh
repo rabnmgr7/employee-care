@@ -1,0 +1,1 @@
+docker image rm -f rabnmgr7/employee-care:latest rabnmgr7/employee-care:$BUILD_NUMBER rabnmgr7/employee-care-db:latest rabnmgr7/employee-care-db:$BUILD_NUMBER
