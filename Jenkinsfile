@@ -10,6 +10,7 @@ pipeline {
         stage('BuildImage') {
             steps {
                 sh '''echo "Building Docker Images"
+                chmod +x ./scripts/img-build.sh
                 ./scripts/img-build.sh'''
             }
         }
